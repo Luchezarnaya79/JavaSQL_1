@@ -18,7 +18,7 @@ public class SQLHelper {
 
     private static Connection getConn() throws SQLException {
 
-        return DriverManager.getConnection("jdbs:mysql://localhost:3306/app", "app", "pass");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
     }
 
     public static DataHelper.VerificationCode getVerificationCode() {
@@ -26,6 +26,7 @@ public class SQLHelper {
 
         try (var conn = getConn()) {
             var code = runner.query(conn, CodeSQL, new ScalarHandler<String>());
+            return new DataHelper.VerificationCode(code);
         } catch (SQLException exception) {
             exception.printStackTrace();
         }

@@ -11,9 +11,9 @@ public class VerificationPage {
 
     private SelenideElement codeField = $("[data-test-id=code] input");
 
-    private SelenideElement verifyButton = $("[data-tast-id=action-verify]");
+    private SelenideElement verifyButton = $("[data-test-id=action-verify]");
 
-    private SelenideElement errorNotification = $("[data-tast-id='error-notification']");
+    private SelenideElement errorNotification = $("[data-test-id='error-notification']");
 
 
     public void verifyVerificationPageVisiblity(){
